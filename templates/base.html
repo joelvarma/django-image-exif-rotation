@@ -1,0 +1,703 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ==== Document Title ==== -->
+    <title> JSciMed Central </title>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- ==== Document Meta ==== -->
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- ==== Favicons ==== -->
+    <link rel="icon" href="{% static 'favicon.png' %}" type="image/png">
+
+    <!-- ==== Google Font ==== -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700">
+
+    <!-- ==== Font Aw   esome ==== -->
+    <link rel="stylesheet" href="{% static 'newcss/font-awesome.min.css' %}">
+
+    <!-- ==== Bootstrap Framework ==== -->
+    <link rel="stylesheet" href="{% static 'newcss/bootstrap.min.css' %}">
+
+    <!-- ==== Bar Rating Plugin ==== -->
+    <link rel="stylesheet" href="{% static 'newcss/fontawesome-stars-o.min.css' %}">
+
+    <!-- ==== Main Stylesheet ==== -->
+    <link rel="stylesheet" href="{% static 'newcss/nstyle.css' %}">
+
+    <!-- ==== Responsive Stylesheet ==== -->
+    <link rel="stylesheet" href="{% static 'newcss/responsive-style.css' %}">
+
+    <!-- ==== Theme Color Stylesheet ==== -->
+    <link rel="stylesheet" href="{% static 'newcss/colors/theme-color-1.css' %}" id="changeColorScheme">
+
+    <!-- ==== Custom Stylesheet ==== -->
+    <link rel="stylesheet" href="{% static 'newcss/custom.css' %}">
+
+
+    <link rel="icon" href="{% static 'jscimed_favicon.ico' %}">
+
+    <!-- ==== HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries ==== -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <!-- ==== Custom.js import ==== -->
+
+    <script src="{% static 'newjs/custom.js' %}"></script>
+
+</head>
+<body>
+
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+        <!-- Header Section Start -->
+        <header class="header--section header--style-6">
+            <!-- Header Topbar Start -->
+            <div class="header--topbar">
+                <div class="container">
+                    <div class="float--left float--xs-none text-xs-center">
+                        <!-- Header Topbar Info Start -->
+
+                        <!-- Header Topbar Info End -->
+                    </div>
+
+                    <div class="float--right float--xs-none text-xs-center">
+                        <!-- Header Topbar Action Start -->
+                        <ul class="header--topbar-action nav">
+                            <li><a href="http://www.jscimedtrackmypaper.com"><i class="fa fm fa-user-o"></i><b>{% if request.user.is_authenticated %} Hello {{ request.user }}  {% else %} Login/Register {% endif %}</b></a></li>
+                        </ul>
+                        <!-- Header Topbar Action End -->
+
+
+
+                        <!-- Header Topbar Social Start -->
+                        <ul class="header--topbar-social nav hidden-sm hidden-xxs">
+                            <li><a href="https://www.facebook.com/jscimed.central/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/JSciMedCentral"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://plus.google.com/104102790659883152971"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="https://www.linkedin.com/company/3148748/"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                        <!-- Header Topbar Social End -->
+                    </div>
+                </div>
+            </div>
+            <!-- Header Topbar End -->
+
+            <!-- Header Mainbar Start -->
+            <div class="header--mainbar">
+                <div class="container">
+                    <!-- Header Logo Start -->
+                    <div class="header--logo float--left float--sm-none text-sm-center">
+                        <h1 class="h1">
+                            <a href="https://www.jscimedcentral.com" class="btn-link">
+                                <img src="{% static 'img/logo.png' %}" alt="JSciMed Central Logo" height="550px" width="350px">
+                                <span class="hidden">JSciMed Central Logo</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <!-- Header Logo End -->
+
+                    <!-- Header Ad Start -->
+                    <div class=" float--right float--sm-none hidden-xs">
+                        <a href="http://www.jscimedtrackmypaper.com">
+                            <img  widht="1000" height="50px" src="{% static 'img/Banner.png' %}" alt="Advertisement">
+                        </a>
+                    </div>
+                    <!-- Header Ad End -->
+                </div>
+            </div>
+            <!-- Header Mainbar End -->
+
+            <!-- Header Navbar Start -->
+            <div class="header--navbar navbar" data-trigger="sticky">
+                <div class="container">
+                    <div class="header--navbar-inner bg--color-1 clearfix">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#headerNav" aria-expanded="false" aria-controls="headerNav">
+                                <span class="sr-only">Toggle Navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div id="headerNav" class="navbar-collapse collapse float--left">
+                            <!-- Header Menu Links Start -->
+                            <ul class="header--menu-links nav navbar-nav" data-trigger="hoverIntent">
+                                   <li><a ></a></li>
+                                      <li><a ></a></li>
+                                         <li><a></a></li>
+                                            <li><a ></a></li>
+                                <li class="dropdown active">
+                                    <a href="https://www.jscimedcentral.com" class="dropdown-toggle" data-toggle="dropdown">Home<i ></i></a>
+
+
+                                </li>
+
+                                <li><a href="https://www.jscimedcentral.com/aboutus.php">About Us</a></li>
+
+                                <li><a href="https://www.jscimedcentral.com/openaccess.php">Open Access</a></li>
+
+                                <li><a href="https://www.jscimedcentral.com/journals.php">Journals</a></li>
+                                <li><a href="https://www.jscimedcentral.com/submitamanuscript.php">Submit Manuscript</a></li>
+                                <li class="dropdown megamenu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Browse JSciMed<i class="fa flm fa-angle-down"></i></a>
+
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown">
+                                            <a href="#">Guidelines</a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="https://www.jscimedcentral.com/authorguide.php">Author Guidelines</a></li>
+                                                <li><a href="https://www.jscimedcentral.com/editorguide.php">Editor Guidelines</a></li>
+                                                <li><a href="https://www.jscimedcentral.com/reviewerguide.php">Reviewer Guidelines</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a href="https://www.jscimedcentral.com/peer-review-process.php">Peer Review Process</a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="https://www.jscimedcentral.com/peer-review-process.php">Peer Review Process</a></li>
+
+                                            </ul>
+
+
+
+
+                                            <a href="#">Corrections</a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="/pdf/author-corrections.pdf">Author Corrections</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a href="#">Manuscript Templates</a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="pdf/Editorial.docx">Editorial</a></li>
+                                                <li><a href="pdf/Case-Report.docx">Case Report</a></li>
+                                                <li><a href="pdf/Clinical-Image.docx">Clinical Image</a></li>
+
+
+                                            </ul>
+                                        </li>
+                                         <li class="dropdown">
+
+                                            <ul style="padding-bottom:30px;" class="dropdown-menu">
+                                                <li><a ></a></li>
+                                               <li><a href="pdf/Short-Communication.docx">Short Communication</a></li>
+
+                                                <li><a href="pdf/Review.docx">Review</a></li>
+
+                                                <li><a href="pdf/Original-Research.docx">Original Research</a></li>
+
+                                            </ul>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a href="#">FAQS</a>
+
+                                            <ul class="dropdown-menu">
+                                                <li><a href="https://www.jscimedcentral.com/editorfaqs.php">Editor FAQS</a></li>
+                                                <li><a href="https://www.jscimedcentral.com/reviewerfaqs.php">Reviewer FAQS </a></li>
+                                                <li><a href="https://www.jscimedcentral.com/authorfaqs.php">Author FAQS</a></li>
+
+
+                                            </ul>
+                                        </li>
+
+
+
+
+                                    </ul>
+                                </li>
+                                <!--
+                                <li>
+                                <a href="world-news.html" onclick="lightbox_open();" class="dropdown-toggle" data-toggle="dropdown">Author Tutorial</a></i></a>
+
+
+                                        <div id="light">
+                                                              <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+                                                              <video id="VisaChipCardVideo" width="600" controls>
+                                                                  <source src="https://www.jscimedcentral.com/tutorials/Author.mp4" type="video/mp4">
+                                                                  <!--Browser does not support <video> tag
+                                                                </video>
+                                        </div>
+
+                                        <div id="fade" onClick="lightbox_close();"></div>
+
+
+
+
+                                </ul>
+
+                            </li>
+
+                               <li class="dropdown ">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tracking System Tutorials<i class="fa flm fa-angle-down"></i></a>
+
+                                <ul class="dropdown-menu">
+                                    <li class="active">
+                                        <a onclick="lightbox_open();" class="dropdown-toggle" data-toggle="dropdown">Author Tutorial</a></i></a>
+
+                                        <div id="light">
+                                                              <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+                                                              <video id="VisaChipCardVideo" width="600" controls>
+                                                                  <source src="https://www.jscimedcentral.com/tutorials/Author.mp4" type="video/mp4">
+                                                                  <!--Browser does not support <video> tag
+                                                                </video>
+                                        </div>
+
+                                        <div id="fade" onClick="lightbox_close();"></div>
+                                       </li>
+                                    <li><a href="home-1-boxed.html">Home Boxed</a></li>
+                                    <li><a href="home-1-rtl.html">Home RTL</a></li>
+                                    <li><a href="home-1-rtl-boxed.html">Home RTL Boxed</a></li>
+                                </ul>
+                            </li>-->
+
+                             <li class="dropdown megamenu posts">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tracking System Tutorials<i class="fa flm fa-angle-down"></i></a>
+
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <!-- Megamenu Posts Start -->
+                                        <div class="megamenu--posts" data-ajax-content="outer">
+                                            <ul class="row" data-ajax-content="inner">
+                                                <li class="col-md-4">
+                                                    <div class="img">
+                                                        <a onclick="lightbox_open();" href="#" class="thumb">
+                                                            <img src="{% static 'img/Author.png' %}" alt="">
+                                                        </a>
+
+                                                        <a  class="cat">Author Tutorial</a>
+
+                                                        <a  class="icon"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                     <div id="light">
+                                                              <a class="boxclose" id="boxclose" onclick="lightbox_close();"></a>
+                                                              <video id="VisaChipCardVideo" width="600" controls>
+                                                                  <source src="https://www.jscimedcentral.com/tutorials/Author.mp4" type="video/mp4">
+                                                                  <!--Browser does not support <video> tag-->
+                                                                </video>
+                                                    </div>
+
+                                                    <div id="fade" onClick="lightbox_close();"></div>
+
+                                                </li>
+
+                                                <li class="col-md-4">
+                                                     <div class="img">
+                                                        <a onclick="lightbox_open2();" href="#" class="thumb">
+                                                            <img src="{% static 'img/Reviewer.png' %}" alt="">
+                                                        </a>
+
+                                                        <a  class="cat">Editor/Reviewer Tutorial</a>
+
+                                                        <a  class="icon"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                     <div id="light2">
+                                                              <a class="boxclose" id="boxclose2" onclick="lightbox_close2();"></a>
+                                                              <video id="VisaChipCardVideo2" width="600" controls>
+                                                                  <source src="https://www.jscimedcentral.com/tutorials/Reviewer.mp4" type="video/mp4">
+                                                                  <!--Browser does not support <video> tag-->
+                                                                </video>
+                                                    </div>
+
+                                                    <div id="fade2" onClick="lightbox_close2();"></div>
+
+                                                </li>
+
+                                                <li class="col-md-4">
+                                                     <div class="img">
+                                                        <a onclick="lightbox_open3();" href="#" class="thumb">
+                                                            <img src="{% static 'img/Register.png' %}" alt="">
+                                                        </a>
+
+                                                        <a  class="cat">Signup Tutorial</a>
+
+                                                        <a  class="icon"><i class="fa fa-eye"></i></a>
+                                                    </div>
+                                                     <div id="light3">
+                                                              <a class="boxclose" id="boxclose3" onclick="lightbox_close3();"></a>
+                                                              <video id="VisaChipCardVideo3" width="600" controls>
+                                                                  <source src="https://www.jscimedcentral.com/tutorials/Register.mp4" type="video/mp4">
+                                                                  <!--Browser does not support <video> tag-->
+                                                                </video>
+                                                    </div>
+
+                                                    <div id="fade3" onClick="lightbox_close3();"></div>
+
+                                                </li>
+
+
+                                            </ul>
+
+                                            <!-- Preloader Start -->
+                                            <div class="preloader bg--color-0--b" data-preloader="1">
+                                                <div class="preloader--inner"></div>
+                                            </div>
+                                            <!-- Preloader End -->
+                                        </div>
+                                        <!-- Megamenu Posts End -->
+
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <!-- Header Menu Links End -->
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- Header Navbar End -->
+        </header>
+        <!-- Header Section End -->
+
+<br><br>
+
+
+
+        {% if messages %}
+<ul class="messages">
+
+    {% for message in messages %}
+        <li {% if messsage.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+    {% endfor %}
+
+</ul>
+
+{% endif %}
+
+        <div class="container">
+        {% block content %}
+
+
+
+                    <div class="row">
+
+
+
+                    {% for obj in object_list %}
+
+                              <div class="col-md-10 col-md-offset-1">
+
+                                        <div class="thumbnail" style="display: inline-block; position: relative;">
+
+                                            <div class="col-md-3 post--img" style="padding:20px">
+                                                {% if obj.fimage %}
+
+                                                    <img  style="margin:0 auto;" src="{{ obj.fimage.url }}" alt="Unable to load image" height="100%" width="100%"  >
+
+                                                    {% else %}
+                                                        <img style="margin:0 auto" src="" alt="No Image Found"
+                                                         class="img-responsive" height="100%" width="100%"  >
+
+                                                {% endif %}
+                                            </div>
+
+
+                                            <div class="col-md-4 post--item post--layout-2" style="padding-top:20px">
+
+
+                                            </div>
+
+                                            <div class="col-md-8">
+
+
+
+                                                <div class="caption">
+
+                                                    <a  href="{{ obj.get_absolute_url }}"><h3>{{  obj.title|truncatechars:80 }}<br> <small>{{ obj.timestamp|timesince }} ago</small></h3></a>
+                                                    <p>{{ obj.content|truncatechars:10|linebreaks }}</p>
+                                                    <p><a  href="{{ obj.get_absolute_url }}" class="btn btn-primary" role="button">Read More</a></p>
+                                                </div>
+                                            </div>
+
+
+                                    </div>
+
+
+
+                              </div>
+                                <br><br>
+                    {% endfor %}
+
+
+                    <div align="center" class="col-md-10 col-md-offset-1">
+                            <span class="step-links">
+                                {% if object_list.has_previous %}
+                                    &nbsp; Previous<a class="fa fa-long-arrow-left" href="?page={{ object_list.previous_page_number }}"></a>
+                                {% endif %}
+
+                                <span class="current">
+                                    Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+                                </span>
+
+                                {% if object_list.has_next %}
+                                   &nbsp; Next <a class="fa fa-long-arrow-right" href="?page={{ object_list.next_page_number }}"> </a>
+                                {% endif %}
+                            </span>
+                    </div>
+
+                    </div>
+
+
+
+
+
+        {% endblock %}
+
+
+
+        </div>
+
+                <!-- Footer Section Start -->
+        <footer class="footer--section">
+            <!-- Footer Widgets Start -->
+            <div class="footer--widgets pd--30-0 bg--color-2">
+                <div class="container">
+                    <div class="row AdjustRow">
+                        <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                            <!-- Widget Start -->
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">About Us</h2>
+
+                                    <i class="icon fa fa-exclamation"></i>
+                                </div>
+
+                                <!-- About Widget Start -->
+                                <div class="about--widget">
+                                    <div class="content">
+                                        <p>JSciMed Central publishes international, peer-reviewed science, medicine, and engineering journals. It is an Open Access platform to support scientific innovation and advancement in the research community by increasing access to peer-reviewed quality research articles.</p>
+                                    </div>
+
+                                    <div class="action">
+                                        <a href="https://www.jscimedcentral.com/aboutus.php" class="btn-link">Read More<i class="fa flm fa-angle-double-right"></i></a>
+                                    </div>
+
+
+                                </div>
+                                <!-- About Widget End -->
+                            </div>
+                            <!-- Widget End -->
+                        </div>
+
+                        <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                            <!-- Widget Start -->
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Browse JSciMed</h2>
+
+
+                                </div>
+
+                                <!-- Links Widget Start -->
+                                <div class="links--widget">
+                                    <ul class="nav">
+                                        <li><a href="https://www.jscimedcentral.com/authorguide.php" class="fa-angle-right">Author Guidelines</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/publicationethics.php" class="fa-angle-right">Publication Ethics</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/specialissueproposals.php" class="fa-angle-right"> Special Issue Proposals</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/indexing.php" class="fa-angle-right">Indexing</a></li>
+                                        <li><a href="https://jscimedcentral.wordpress.com/" class="fa-angle-right">Blog</a></li>
+                                        <li><a href="http://www.jscimedtrackmypaper.com" class="fa-angle-right">JSciMed Central Track My Paper</a></li>
+
+                                    </ul>
+                                </div>
+                                <!-- Links Widget End -->
+                            </div>
+                            <!-- Widget End -->
+                        </div>
+
+                        <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                            <!-- Widget Start -->
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Journals</h2>
+
+                                    <i class="icon fa fa-bullhorn"></i>
+                                </div>
+
+                                <!-- Links Widget Start -->
+                                <div class="links--widget">
+                                    <ul class="nav">
+                                        <li><a href="https://www.jscimedcentral.com/Anesthesiology" class="fa-angle-right">International Journal of Clinical Anesthesiology</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/Biometrics/" class="fa-angle-right">Annals of Biometrics & Biostatistics</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/NeurologicalDisorders/" class="fa-angle-right">Journal of Neurological Disorders & Stroke</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/Dentistry/" class="fa-angle-right">JSM Dentistry</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/Obstetrics/" class="fa-angle-right">Medical Journal of Obstetrics and Gynecology</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/Pulmonology/" class="fa-angle-right">Clinical Research in Pulmonology</a></li>
+                                        <li><a href="https://www.jscimedcentral.com/Radiology/" class="fa-angle-right">Journal of Radiology and Radiation Therapy</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Links Widget End -->
+                            </div>
+                            <!-- Widget End -->
+                        </div>
+
+                        <div class="col-md-3 col-xs-6 col-xxs-12 ptop--30 pbottom--30">
+                            <!-- Widget Start -->
+                            <div class="widget">
+                                <div class="widget--title">
+                                    <h2 class="h4">Address</h2>
+
+                                    <i class="icon fa fa-user-o"></i>
+                                </div>
+
+                                <!-- Links Widget Start -->
+                                <div class="links--widget">
+                                     <ul class="nav">
+                                        <li>
+                                            <i class="fa fa-map"></i>
+                                            <span>1455 Frazee Road, Suite 570 San Diego, California 92108, USA</span>
+                                        </li>
+                                        <li>
+                                            <div class="fa fa-envelope-o"><a href="mailto:info@jscimedcentral.com">  info@jscimedcentral.com</a></div>
+
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone"></i>
+                                            <a>Tel: (619)-373-8720</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Links Widget End -->
+                            </div>
+                            <!-- Widget End -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Widgets End -->
+
+            <!-- Footer Copyright Start -->
+            <div class="footer--copyright bg--color-3">
+                <div class="social--bg bg--color-1"></div>
+
+                <div class="container">
+                    <div align="center" class="text float--left">&copy; 2017 <a style="color:white;" href="#">JSciMed Central</a>.All Rights Reserved <br>
+
+Creative Commons Licence Open Access Publication by JSciMed Central is licensed under a Creative Commons Attribution 4.0 International License.
+Based on a work at https://jscimedcentral.com/. Permissions beyond the scope of this license may be available at https://creativecommons.org/.
+</div>
+                </div>
+            </div>
+            <!-- Footer Copyright End -->
+        </footer>
+        <!-- Footer Section End -->
+    </div>
+    <!-- Wrapper End -->
+
+    <!-- Sticky Social Start -->
+    <div id="stickySocial" class="sticky--right">
+        <ul class="nav">
+            <li>
+                <a href="https://www.facebook.com/jscimed.central/">
+                    <i class="fa fa-facebook"></i>
+                    <span>Follow Us On Facebook</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://twitter.com/JSciMedCentral">
+                    <i class="fa fa-twitter"></i>
+                    <span>Follow Us On Twitter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://plus.google.com/104102790659883152971">
+                    <i class="fa fa-google-plus"></i>
+                    <span>Follow Us On Google Plus</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="https://www.linkedin.com/company/3148748/">
+                    <i class="fa fa-linkedin"></i>
+                    <span>Follow Us On LinkedIn</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Sticky Social End -->
+
+    <!-- Back To Top Button Start -->
+    <div id="backToTop">
+        <a href="#"><i class="fa fa-angle-double-up"></i></a>
+    </div>
+    <!-- Back To Top Button End -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+
+    <!-- ==== jQuery Library ==== -->
+    <script src="{% static 'newjs/jquery-3.2.1.min.js' %}"></script>
+
+    <!-- ==== Bootstrap Framework ==== -->
+    <script src="{% static 'newjs/bootstrap.min.js' %}"></script>
+
+    <!-- ==== StickyJS Plugin ==== -->
+    <script src="{% static  'newjs/jquery.sticky.min.js' %}"></script>
+
+    <!-- ==== HoverIntent Plugin ==== -->
+    <script src="{% static 'newjs/jquery.hoverIntent.min.js' %}"></script>
+
+    <!-- ==== Marquee Plugin ==== -->
+    <script src="{% static 'newjs/jquery.marquee.min.js' %}"></script>
+
+    <!-- ==== Validation Plugin ==== -->
+    <script src="{% static 'newjs/jquery.validate.min.js' %}"></script>
+
+    <!-- ==== Isotope Plugin ==== -->
+    <script src="{% static 'newjs/isotope.min.js' %}"></script>
+
+    <!-- ==== Resize Sensor Plugin ==== -->
+    <script src="{% static 'newjs/resizesensor.min.js' %}"></script>
+
+    <!-- ==== Sticky Sidebar Plugin ==== -->
+    <script src="{% static 'newjs/theia-sticky-sidebar.min.js' %}"></script>
+
+    <!-- ==== Zoom Plugin ==== -->
+    <script src="{% static 'newjs/jquery.zoom.min.js' %}"></script>
+
+    <!-- ==== Bar Rating Plugin ==== -->
+    <script src="{% static 'newjs/jquery.barrating.min.js' %}"></script>
+
+    <!-- ==== Countdown Plugin ==== -->
+    <script src="{% static 'newjs/jquery.countdown.min.js' %}"></script>
+
+    <!-- ==== RetinaJS Plugin ==== -->
+    <script src="{% static 'newjs/retina.min.js' %}"></script>
+
+
+    <!-- ==== Main JavaScript ==== -->
+    <script src="{% static 'newjs/main.js' %}"></script>
+
+    <!-- dash board scripts -->
+
+</body>
+</html>

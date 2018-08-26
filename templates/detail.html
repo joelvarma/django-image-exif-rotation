@@ -1,0 +1,24 @@
+{% extends "base.html"  %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+{% if obj.fimage %}
+
+    <a href="{{ obj.fimage.url }}"><img style="margin:0 auto" src="{{ obj.fimage.url }}" alt="Unable to load Image" class="img-responsive" height="30%" width="30%" ></a>
+
+{% endif %}
+<div class="col-md-10 col-md-offset-1">
+
+
+       <h2> {{ obj.title }} <small> <br>&nbsp; {{ obj.timestamp }} &nbsp; </small> </h2> <br>
+
+    <div class="col-md-12">
+
+                    {{ obj.content | linebreaks }}
+
+    </div>
+</div>
+
+{% endblock %}
